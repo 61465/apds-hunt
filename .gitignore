@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+venv/
+.env
+.DS_Store
+.vscode/
+.idea/
+
+# Scratch files from NEXUS adversarial design runs (local only).
+.nexus_*.md

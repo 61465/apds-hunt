@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apds-hunt"
+version = "0.1.0"
+description = "Reference implementation of Asymmetric Patch Detection for Symmetric APIs (APDS). Finds unpatched sibling vulnerabilities by evaluating the XOR Rule over public commit history."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "NEXUS Zone Research", email = "abdarahman10555@gmail.com" }]
+keywords = ["security", "vulnerability-research", "patch-analysis", "variant-hunting", "cve"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security",
+  "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+apds-hunt = "apds_hunt.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/61465/apds-hunt"
+Methodology = "https://github.com/61465/apds-hunt/blob/main/docs/METHODOLOGY.md"
+Issues = "https://github.com/61465/apds-hunt/issues"
+
+[tool.setuptools.packages.find]
+include = ["apds_hunt*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra --strict-markers"
